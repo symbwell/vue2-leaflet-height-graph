@@ -1,12 +1,13 @@
 <template>
     <div id="app">
-        <l-map ref="map" :zoom="zoom" :center="initialLocation" :bounds="bounds">
+        <l-map id="map" ref="map" :zoom="zoom" :center="initialLocation" :bounds="bounds">
             <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
             <l-heightgraph
                     :options="heightGraphOptions"
                     :data="data"
                     :position="'bottomright'"
                     :parser="parser"
+                    :container="'app'"
             ></l-heightgraph>
             <l-geo-json ref="geojson" :geojson="data"></l-geo-json>
             <l-control class="example-custom-control" position="bottomleft">
@@ -18,8 +19,8 @@
     </div>
 </template>
 <script>
-    import {geoJsonRoute} from "./data/normal-example"
-    import {geoJsonRoute2} from "./data/normal-example-2"
+    import {geoJsonRoute} from "./data/no-parser-example"
+    import {geoJsonRoute2} from "./data/no-parser-example-2"
     import {orsJson} from "./data/ors-example"
     import {geoJson} from "./data/geojson-example"
     import {geoJson2} from "./data/geojson-example-2"
@@ -38,11 +39,11 @@
             "l-control": LControl
         }, data() {
             return {
-                data: geoJsonRoute,
+                data: orsJson,
                 initialLocation: new L.LatLng(49.430068, 8.682718),
                 bounds: null,
                 zoom: 14,
-                parser: "normal",
+                parser: "ors",
                 dataSets: [
                     {
                         data: geoJsonRoute, parser: "normal"
@@ -103,7 +104,6 @@
 </script>
 <style>
     @import "~leaflet/dist/leaflet.css";
-    @import "../dist/Vue2LeafletHeightGraph.css";
 
     body {
         padding: 0;
@@ -119,6 +119,11 @@
     #app {
         height: 100%;
         width: 100%;
+    }
+
+    #map {
+      width: 100%;
+      height: 70%;
     }
 
     .example-custom-control {
