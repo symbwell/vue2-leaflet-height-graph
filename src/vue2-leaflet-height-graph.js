@@ -2,7 +2,6 @@ import * as parsers from "./utils/parser.js"
 import Leaflet from 'leaflet'
 import sizeProps from './size-props'
 import 'leaflet.heightgraph'
-import 'leaflet.heightgraph/dist/L.Control.Heightgraph.min.css'
 
 export default {
     name: 'l-control-height-graph',
