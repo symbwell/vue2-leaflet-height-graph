@@ -20,11 +20,13 @@ In a `.vue` file:
 
 ```vue
 <script>
-    import LHeightGraph from 'vue2-leaflet-height-graph'
+    import Vue2LeafletHeightGraph from '@symbwell/vue2-leaflet-height-graph';
+    import 'leaflet.heightgraph/dist/L.Control.Heightgraph.min.css'
+
     // ...
     export default {
         // ...
-        components: { 'l-height-graph': LHeightGraph }
+        components: { 'l-height-graph': Vue2LeafletHeightGraph }
         // ...
     }
 </script>
@@ -37,7 +39,8 @@ In your `main.js`:
 
 ```js
 import Vue from 'vue';
-import Vue2LeafletHeightGraph from 'vue2-leaflet-height-graph';
+import Vue2LeafletHeightGraph from '@symbwell/vue2-leaflet-height-graph';
+import 'leaflet.heightgraph/dist/L.Control.Heightgraph.min.css'
 // ...
 Vue.component('l-height-graph', Vue2LeafletHeightGraph);
 // ...
@@ -115,6 +118,10 @@ Fast setting for `options.position` (overwriting).
 
 Boolean for expanding the heightgraph window on creation. Values are `true` and `false`.
 Fast setting for `options.expand` (overwriting).
+
+#### container
+
+Allow to choose container outside map. Set some container ID like `:container="'map-wrapper'"`
 
 ### Events
 
