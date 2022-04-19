@@ -101,13 +101,6 @@ module.exports = require("current-script-polyfill");
 
 /***/ }),
 
-/***/ "ed27":
-/***/ (function(module, exports) {
-
-module.exports = require("leaflet.heightgraph/dist/L.Control.Heightgraph.min.css");
-
-/***/ }),
-
 /***/ "ef37":
 /***/ (function(module, exports) {
 
@@ -300,11 +293,7 @@ var external_leaflet_default = /*#__PURE__*/__webpack_require__.n(external_leafl
 // EXTERNAL MODULE: external "leaflet.heightgraph"
 var external_leaflet_heightgraph_ = __webpack_require__("ef37");
 
-// EXTERNAL MODULE: external "leaflet.heightgraph/dist/L.Control.Heightgraph.min.css"
-var L_Control_Heightgraph_min_css_ = __webpack_require__("ed27");
-
 // CONCATENATED MODULE: ./node_modules/eslint-loader??ref--12-0!./src/vue2-leaflet-height-graph.js?vue&type=script&lang=js&
-
 
 
 
